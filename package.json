@@ -1,13 +1,11 @@
 {
   "name": "ts-odata-v4-server",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "TS OData V4 Server",
   "main": "build/lib/index.js",
   "typings": "build/lib/index",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "npm run tsc",
-    "pretsc": "npm run lint",
     "tsc": "tsc",
     "prewatch": "rimraf build",
     "watch": "npm-watch",
