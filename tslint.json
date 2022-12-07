@@ -1,0 +1,9 @@
+{
+	"rules": {
+		"no-unused-expression": true,
+		"no-duplicate-variable": true,
+		"class-name": true,
+		"semicolon": ["always", "ignore-interfaces"],
+		"no-consecutive-blank-lines": [true]
+	}
+}

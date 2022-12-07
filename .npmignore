@@ -1,0 +1,6 @@
+.vscode
+coverage
+report
+docs
+.nyc_output
+*.log*

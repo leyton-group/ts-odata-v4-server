@@ -1,0 +1,10 @@
+node_modules
+.vscode
+*.log*
+coverage
+report
+build
+docs
+.nyc_output
+tmp.*
+.idea
