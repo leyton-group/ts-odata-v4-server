@@ -1,6 +1,6 @@
 # TS OData V4 Server
 
-TS OData V4 server for node.js and Typescript
+TS OData V4 server for node.js and Typescript based on [odata-v4-server](https://www.npmjs.com/package/odata-v4-server)
 
 ## Features
 
@@ -34,6 +34,13 @@ TS OData V4 server for node.js and Typescript
 ## Example server
 
 - server file :
+
+```typescript
+@odata.controller(ProductsController, true)
+export class Server extends ODataServer {}
+```
+
+- controller file :
 
 ```typescript
 export class ProductsController extends ODataController {
@@ -79,25 +86,27 @@ export class ProductsController extends ODataController {
 - index file :
 
 ```typescript
-import { NorthwindServer } from "./server";
+import { Server } from "./server";
 require("dotenv").config();
 
+// Setup metadata schema
+Server.$metadata(your_schema_file);
 // Start ODATA server
 const port = parseInt(process.env.PORT, 10) || 3000;
-export default NorthwindServer.create(port).addListener("listening", () => {
+Server.create("/odata", port).addListener("listening", () => {
   console.log(`Odata server listening on port ${port} 🚀`);
 });
 ```
 
 ### Response example
 
-**Path :** `http://localhost:3003/Categories`
+**Path :** `http://localhost:3000/odata/Categories`
 
 **Method :** `GET`
 
 ```json
 {
-  "@odata.context": "http://localhost:3000/$metadata#Categories",
+  "@odata.context": "http://localhost:3000/odata/$metadata#Categories",
   "value": [
     {
       "Id": 1,
