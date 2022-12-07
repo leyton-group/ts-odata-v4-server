@@ -6,7 +6,6 @@
   "typings": "build/lib/index",
   "scripts": {
     "postinstall": "npm run build",
-    "prebuild": "rimraf build",
     "build": "npm run tsc",
     "pretsc": "npm run lint",
     "tsc": "tsc",
